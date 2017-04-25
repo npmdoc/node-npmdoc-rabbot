@@ -1,0 +1,1692 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/arobson/rabbot#readme"
+
+    >rabbot (v1.1.0)</a>
+</h1>
+<h4>Abstractions to simplify working with the RabbitMQ</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbot">module rabbot</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">rabbot.</span>autoNack</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">rabbot.</span>hasHandles</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch">
+            function <span class="apidocSignatureSpan">rabbot.</span>ackBatch
+            <span class="apidocSignatureSpan">( name, connectionName, resolver )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbot.</span>ackBatch.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbot.</span>channel</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbot.</span>configurations</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbot.</span>connections</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbot.</span>info</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbot.</span>serializers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbot.ackBatch">module rabbot.ackBatch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.ackBatch">
+            function <span class="apidocSignatureSpan">rabbot.</span>ackBatch
+            <span class="apidocSignatureSpan">( name, connectionName, resolver )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.compose">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>compose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.extend">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>extend
+            <span class="apidocSignatureSpan">(props, ctorProps, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.inherits">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>inherits
+            <span class="apidocSignatureSpan">(parent, ctorProps, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.mixin">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>mixin
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.punch">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>punch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbot.ackBatch.prototype">module rabbot.ackBatch.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._ack">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_ack
+            <span class="apidocSignatureSpan">( tag, inclusive )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._ackOrNackSequence">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_ackOrNackSequence
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._firstByStatus">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_firstByStatus
+            <span class="apidocSignatureSpan">( status )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._lastByStatus">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_lastByStatus
+            <span class="apidocSignatureSpan">( status )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._nack">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_nack
+            <span class="apidocSignatureSpan">( tag, inclusive )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._processBatch">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_processBatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._reject">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_reject
+            <span class="apidocSignatureSpan">( tag, inclusive )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._removeByStatus">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_removeByStatus
+            <span class="apidocSignatureSpan">( status )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._removeUpToTag">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_removeUpToTag
+            <span class="apidocSignatureSpan">( tag )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._resolveAll">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_resolveAll
+            <span class="apidocSignatureSpan">( status, first, last )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype._resolveTag">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_resolveTag
+            <span class="apidocSignatureSpan">( tag, operation, inclusive )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.addMessage">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>addMessage
+            <span class="apidocSignatureSpan">( message )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.changeName">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>changeName
+            <span class="apidocSignatureSpan">( name )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.emit">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>emit
+            <span class="apidocSignatureSpan">( topic, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.getEnvelope">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>getEnvelope
+            <span class="apidocSignatureSpan">( topic, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.getMessageOps">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>getMessageOps
+            <span class="apidocSignatureSpan">( tag )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.ignoreSignal">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>ignoreSignal
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.listenForSignal">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>listenForSignal
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.off">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>off
+            <span class="apidocSignatureSpan">( topic, context )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.on">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>on
+            <span class="apidocSignatureSpan">( topic, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.once">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>once
+            <span class="apidocSignatureSpan">( topic, callback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.ackBatch.prototype.reset">
+            function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbot.channel">module rabbot.channel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.channel.create">
+            function <span class="apidocSignatureSpan">rabbot.channel.</span>create
+            <span class="apidocSignatureSpan">( connection, name, confirm )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbot.info">module rabbot.info</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.info.createConsistentHash">
+            function <span class="apidocSignatureSpan">rabbot.info.</span>createConsistentHash
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.info.createHash">
+            function <span class="apidocSignatureSpan">rabbot.info.</span>createHash
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.info.createTag">
+            function <span class="apidocSignatureSpan">rabbot.info.</span>createTag
+            <span class="apidocSignatureSpan">( queueName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.info.host">
+            function <span class="apidocSignatureSpan">rabbot.info.</span>host
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.info.lib">
+            function <span class="apidocSignatureSpan">rabbot.info.</span>lib
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbot.info.process">
+            function <span class="apidocSignatureSpan">rabbot.info.</span>process
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">rabbot.info.</span>id</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbot" id="apidoc.module.rabbot">module rabbot</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch" id="apidoc.element.rabbot.ackBatch">
+        function <span class="apidocSignatureSpan">rabbot.</span>ackBatch
+        <span class="apidocSignatureSpan">( name, connectionName, resolver )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ackBatch = function ( name, connectionName, resolver ) {
+	this.name = name;
+	this.connectionName = connectionName;
+	this.resolver = resolver;
+	this.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbot.ackBatch" id="apidoc.module.rabbot.ackBatch">module rabbot.ackBatch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.ackBatch" id="apidoc.element.rabbot.ackBatch.ackBatch">
+        function <span class="apidocSignatureSpan">rabbot.</span>ackBatch
+        <span class="apidocSignatureSpan">( name, connectionName, resolver )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ackBatch = function ( name, connectionName, resolver ) {
+	this.name = name;
+	this.connectionName = connectionName;
+	this.resolver = resolver;
+	this.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.compose" id="apidoc.element.rabbot.ackBatch.compose">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>compose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose = function () {
+    return riveter.compose.apply(this, [fn].concat(slice.call(arguments, 0)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.extend" id="apidoc.element.rabbot.ackBatch.extend">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>extend
+        <span class="apidocSignatureSpan">(props, ctorProps, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (props, ctorProps, options) {
+    return riveter.extend(fn, props, ctorProps, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	connectionFn = connectionFn || require( &#x27;./amqp/connection&#x27; );
+
+	var connection;
+	var queues = [];
+	var exchanges = [];
+	var channels = {};
+
+	var Fsm = machina.Fsm.<span class="apidocCodeKeywordSpan">extend</span>( {
+		name: options.name || &#x22;default&#x22;,
+		initialState: &#x22;initializing&#x22;,
+		connected: false,
+		consecutiveFailures: 0,
+		connectTimeout: undefined,
+		failAfter: ( options.failAfter || 60 ) * 1000,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.inherits" id="apidoc.element.rabbot.ackBatch.inherits">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>inherits
+        <span class="apidocSignatureSpan">(parent, ctorProps, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inherits = function (parent, ctorProps, options) {
+    return riveter.inherits(fn, parent, ctorProps, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.mixin" id="apidoc.element.rabbot.ackBatch.mixin">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>mixin
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mixin = function () {
+    return riveter.mixin.apply(this, ([fn].concat(slice.call(arguments, 0))));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.punch" id="apidoc.element.rabbot.ackBatch.punch">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.</span>punch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">punch = function () {
+    return riveter.punch.apply(this, ([fn].concat(slice.call(arguments, 0))));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbot.ackBatch.prototype" id="apidoc.module.rabbot.ackBatch.prototype">module rabbot.ackBatch.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._ack" id="apidoc.element.rabbot.ackBatch.prototype._ack">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_ack
+        <span class="apidocSignatureSpan">( tag, inclusive )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_ack = function ( tag, inclusive ) {
+	this.lastAck = tag;
+	this._resolveTag( tag, &#x22;ack&#x22;, inclusive );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._ackOrNackSequence" id="apidoc.element.rabbot.ackBatch.prototype._ackOrNackSequence">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_ackOrNackSequence
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_ackOrNackSequence = function () {
+	try {
+		var firstMessage = this.messages[ 0 ];
+		if ( firstMessage === undefined ) {
+			return;
+		}
+		var firstStatus = firstMessage.status;
+		var sequenceEnd = firstMessage.tag;
+		var call = calls[ firstStatus ];
+		if ( firstStatus === &#x22;pending&#x22; ) {
+			return;
+		} else {
+			for (var i = 1; i &#x3c; _.size( this.messages ) - 1; i++) {
+				if ( this.messages[ i ].status !== firstStatus ) {
+					break;
+				}
+				sequenceEnd = this.messages[ i ].tag;
+			}
+			if ( call ) {
+				this[ call ]( sequenceEnd, true );
+			}
+		}
+	} catch ( err ) {
+		log.error( &#x22;An exception occurred while trying to resolve ack/nack sequence on %s - %s: %s&#x22;, this.name, this.connectionName, err
+.stack );
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+		// just rejects
+		else if ( !hasPending &#x26;&#x26; !hasNack &#x26;&#x26; !hasAck &#x26;&#x26; hasReject ) {
+			this._resolveAll( &#x22;reject&#x22;, &#x22;firstReject&#x22;, &#x22;lastReject&#x22; );
+		}
+		// acks, nacks or rejects
+		else if ( hasNack || hasAck || hasReject ) {
+			this.<span class="apidocCodeKeywordSpan">_ackOrNackSequence</span>();
+			this.acking = false;
+		}
+		// nothing to do
+		else {
+			this.resolver( &#x22;waiting&#x22; );
+			this.acking = false;
+		}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._firstByStatus" id="apidoc.element.rabbot.ackBatch.prototype._firstByStatus">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_firstByStatus
+        <span class="apidocSignatureSpan">( status )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_firstByStatus = function ( status ) {
+	return _.find( this.messages, { status: status } );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				this.acking = false;
+			}.bind( this ) );
+	}
+};
+
+AckBatch.prototype._resolveTag = function( tag, operation, inclusive ) {
+	var removed = this._removeUpToTag( tag );
+	var nextAck = this.<span class="apidocCodeKeywordSpan">_firstByStatus</span>( &#x22;ack&#x22; );
+	var nextNack = this._firstByStatus( &#x22;nack&#x22; );
+	var nextReject = this._firstByStatus( &#x22;reject&#x22; );
+	this.firstAck = nextAck ? nextAck.tag : undefined;
+	this.firstNack = nextNack ? nextNack.tag : undefined;
+	this.firstReject = nextReject ? nextReject.tag : undefined;
+	log.debug( &#x22;%s %d tags (%s) on %s - %s. (Next ack: %d, Next nack: %d, Next reject: %d)&#x22;,
+		operation,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._lastByStatus" id="apidoc.element.rabbot.ackBatch.prototype._lastByStatus">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_lastByStatus
+        <span class="apidocSignatureSpan">( status )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_lastByStatus = function ( status ) {
+	return _.findLast( this.messages, { status: status } );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var emitEmpty = function() {
+		// process.nextTick( function() {
+    setTimeout( function() {
+			this.emit( &#x22;empty&#x22; );
+		}.bind( this ), 10 );
+	}.bind( this );
+	if ( this.messages.length !== 0 ) {
+		var lastTag = this.<span class="apidocCodeKeywordSpan">_lastByStatus</span>( status ).tag;
+		log.debug( &#x22;%s ALL (%d) tags on %s up to %d - %s.&#x22;,
+			status,
+			this.messages.length,
+			this.name,
+      lastTag,
+			this.connectionName );
+		this.resolver( status, { tag: lastTag, inclusive: true } )
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._nack" id="apidoc.element.rabbot.ackBatch.prototype._nack">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_nack
+        <span class="apidocSignatureSpan">( tag, inclusive )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_nack = function ( tag, inclusive ) {
+	this.lastNack = tag;
+	this._resolveTag( tag, &#x22;nack&#x22;, inclusive );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._processBatch" id="apidoc.element.rabbot.ackBatch.prototype._processBatch">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_processBatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_processBatch = function () {
+	this.acking = this.acking !== undefined ? this.acking : false;
+	if ( !this.acking ) {
+		this.acking = true;
+		var hasPending = ( _.findIndex( this.messages, { status: &#x22;pending&#x22; } ) &#x3e;= 0 );
+		var hasAck = this.firstAck;
+		var hasNack = this.firstNack;
+		var hasReject = this.firstReject;
+		// just acks
+		if ( !hasPending &#x26;&#x26; !hasNack &#x26;&#x26; hasAck &#x26;&#x26; !hasReject ) {
+			this._resolveAll( &#x22;ack&#x22;, &#x22;firstAck&#x22;, &#x22;lastAck&#x22; );
+		}
+		// just nacks
+		else if ( !hasPending &#x26;&#x26; hasNack &#x26;&#x26; !hasAck &#x26;&#x26; !hasReject ) {
+			this._resolveAll( &#x22;nack&#x22;, &#x22;firstNack&#x22;, &#x22;lastNack&#x22; );
+		}
+		// just rejects
+		else if ( !hasPending &#x26;&#x26; !hasNack &#x26;&#x26; !hasAck &#x26;&#x26; hasReject ) {
+			this._resolveAll( &#x22;reject&#x22;, &#x22;firstReject&#x22;, &#x22;lastReject&#x22; );
+		}
+		// acks, nacks or rejects
+		else if ( hasNack || hasAck || hasReject ) {
+			this._ackOrNackSequence();
+			this.acking = false;
+		}
+		// nothing to do
+		else {
+			this.resolver( &#x22;waiting&#x22; );
+			this.acking = false;
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		this.signalSubscription.unsubscribe();
+	}
+};
+
+AckBatch.prototype.listenForSignal = function() {
+	if ( !this.signalSubscription ) {
+		this.signalSubscription = signal.subscribe( &#x22;#&#x22;, function() {
+			this.<span class="apidocCodeKeywordSpan">_processBatch</span>();
+		}.bind( this ) );
+	}
+};
+
+AckBatch.prototype.reset = function() {
+	this.lastAck = -1;
+	this.lastNack = -1;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._reject" id="apidoc.element.rabbot.ackBatch.prototype._reject">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_reject
+        <span class="apidocSignatureSpan">( tag, inclusive )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_reject = function ( tag, inclusive ) {
+	this.lastReject = tag;
+	this._resolveTag( tag, &#x22;reject&#x22;, inclusive );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._removeByStatus" id="apidoc.element.rabbot.ackBatch.prototype._removeByStatus">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_removeByStatus
+        <span class="apidocSignatureSpan">( status )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeByStatus = function ( status ) {
+	return _.remove( this.messages, function( message ) {
+		return message.status === status;
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			this.messages.length,
+			this.name,
+      lastTag,
+			this.connectionName );
+		this.resolver( status, { tag: lastTag, inclusive: true } )
+			.then( function() {
+				this[ last ] = lastTag;
+				this.<span class="apidocCodeKeywordSpan">_removeByStatus</span>( status );
+				this[ first ] = undefined;
+				if ( count &#x3e; 0 &#x26;&#x26; this.messages.length === 0 ) {
+					log.debug( &#x22;No pending tags remaining on queue %s - %s&#x22;, this.name, this.connectionName );
+					// The following setTimeout is the only thing between an insideous heisenbug and your sanity:
+					// The promise for ack/nack will resolve on the channel before the server has processed it.
+					// Without the setTimeout, if there is a pending cleanup/shutdown on the channel from the queueFsm,
+					// the channel close will complete and cause the server to ignore the outstanding ack/nack command.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._removeUpToTag" id="apidoc.element.rabbot.ackBatch.prototype._removeUpToTag">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_removeUpToTag
+        <span class="apidocSignatureSpan">( tag )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeUpToTag = function ( tag ) {
+	return _.remove( this.messages, function( message ) {
+		return message.tag &#x3c;= tag;
+	} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				}
+				this.acking = false;
+			}.bind( this ) );
+	}
+};
+
+AckBatch.prototype._resolveTag = function( tag, operation, inclusive ) {
+	var removed = this.<span class="apidocCodeKeywordSpan">_removeUpToTag</span>( tag );
+	var nextAck = this._firstByStatus( &#x22;ack&#x22; );
+	var nextNack = this._firstByStatus( &#x22;nack&#x22; );
+	var nextReject = this._firstByStatus( &#x22;reject&#x22; );
+	this.firstAck = nextAck ? nextAck.tag : undefined;
+	this.firstNack = nextNack ? nextNack.tag : undefined;
+	this.firstReject = nextReject ? nextReject.tag : undefined;
+	log.debug( &#x22;%s %d tags (%s) on %s - %s. (Next ack: %d, Next nack: %d, Next reject: %d)&#x22;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._resolveAll" id="apidoc.element.rabbot.ackBatch.prototype._resolveAll">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_resolveAll
+        <span class="apidocSignatureSpan">( status, first, last )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveAll = function ( status, first, last ) {
+	var count = this.messages.length;
+	var emitEmpty = function() {
+		// process.nextTick( function() {
+    setTimeout( function() {
+			this.emit( &#x22;empty&#x22; );
+		}.bind( this ), 10 );
+	}.bind( this );
+	if ( this.messages.length !== 0 ) {
+		var lastTag = this._lastByStatus( status ).tag;
+		log.debug( &#x22;%s ALL (%d) tags on %s up to %d - %s.&#x22;,
+			status,
+			this.messages.length,
+			this.name,
+      lastTag,
+			this.connectionName );
+		this.resolver( status, { tag: lastTag, inclusive: true } )
+			.then( function() {
+				this[ last ] = lastTag;
+				this._removeByStatus( status );
+				this[ first ] = undefined;
+				if ( count &#x3e; 0 &#x26;&#x26; this.messages.length === 0 ) {
+					log.debug( &#x22;No pending tags remaining on queue %s - %s&#x22;, this.name, this.connectionName );
+					// The following setTimeout is the only thing between an insideous heisenbug and your sanity:
+					// The promise for ack/nack will resolve on the channel before the server has processed it.
+					// Without the setTimeout, if there is a pending cleanup/shutdown on the channel from the queueFsm,
+					// the channel close will complete and cause the server to ignore the outstanding ack/nack command.
+					// I lost HOURS on this because doing things that slow down the processing of the close cause
+					// the bug to disappear.
+					// Hackfully yours,
+					// Alex
+					emitEmpty();
+				}
+				this.acking = false;
+			}.bind( this ) );
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		this.acking = true;
+		var hasPending = ( _.findIndex( this.messages, { status: &#x22;pending&#x22; } ) &#x3e;= 0 );
+		var hasAck = this.firstAck;
+		var hasNack = this.firstNack;
+		var hasReject = this.firstReject;
+		// just acks
+		if ( !hasPending &#x26;&#x26; !hasNack &#x26;&#x26; hasAck &#x26;&#x26; !hasReject ) {
+			this.<span class="apidocCodeKeywordSpan">_resolveAll</span>( &#x22;ack&#x22;, &#x22;firstAck&#x22;, &#x22;lastAck&#x22; );
+		}
+		// just nacks
+		else if ( !hasPending &#x26;&#x26; hasNack &#x26;&#x26; !hasAck &#x26;&#x26; !hasReject ) {
+			this._resolveAll( &#x22;nack&#x22;, &#x22;firstNack&#x22;, &#x22;lastNack&#x22; );
+		}
+		// just rejects
+		else if ( !hasPending &#x26;&#x26; !hasNack &#x26;&#x26; !hasAck &#x26;&#x26; hasReject ) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype._resolveTag" id="apidoc.element.rabbot.ackBatch.prototype._resolveTag">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>_resolveTag
+        <span class="apidocSignatureSpan">( tag, operation, inclusive )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveTag = function ( tag, operation, inclusive ) {
+	var removed = this._removeUpToTag( tag );
+	var nextAck = this._firstByStatus( &#x22;ack&#x22; );
+	var nextNack = this._firstByStatus( &#x22;nack&#x22; );
+	var nextReject = this._firstByStatus( &#x22;reject&#x22; );
+	this.firstAck = nextAck ? nextAck.tag : undefined;
+	this.firstNack = nextNack ? nextNack.tag : undefined;
+	this.firstReject = nextReject ? nextReject.tag : undefined;
+	log.debug( &#x22;%s %d tags (%s) on %s - %s. (Next ack: %d, Next nack: %d, Next reject: %d)&#x22;,
+		operation,
+		removed.length,
+		inclusive ? &#x22;inclusive&#x22; : &#x22;individual&#x22;,
+		this.name,
+		this.connectionName,
+		this.firstAck || 0,
+		this.firstNack || 0,
+		this.firstReject || 0 );
+	this.resolver( operation, { tag: tag, inclusive: inclusive } );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	this.connectionName = connectionName;
+	this.resolver = resolver;
+	this.reset();
+};
+
+AckBatch.prototype._ack = function( tag, inclusive ) {
+	this.lastAck = tag;
+	this.<span class="apidocCodeKeywordSpan">_resolveTag</span>( tag, &#x22;ack&#x22;, inclusive );
+};
+
+AckBatch.prototype._ackOrNackSequence = function() {
+	try {
+		var firstMessage = this.messages[ 0 ];
+		if ( firstMessage === undefined ) {
+			return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.addMessage" id="apidoc.element.rabbot.ackBatch.prototype.addMessage">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>addMessage
+        <span class="apidocSignatureSpan">( message )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addMessage = function ( message ) {
+	this.receivedCount++;
+	var status = message.message || message;
+	this.messages.push( status );
+	log.debug( &#x22;New pending tag %d on queue %s - %s&#x22;, status.tag, this.name, this.connectionName );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var onPublish = function( data ) {
+			var handled;
+
+			if ( data.activated ) {
+				handled = true;
+			}
+			if ( shouldAck &#x26;&#x26; shouldBatch ) {
+				messages.<span class="apidocCodeKeywordSpan">addMessage</span>( ops.message );
+			}
+
+			if ( !handled ) {
+				unhandledLog.warn( &#x22;Message of %s on queue &#x27;%s&#x27;, connection &#x27;%s&#x27; was not processed by any registered
+ handlers&#x22;,
+					raw.type,
+					channelName,
+					topology.connection.name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.changeName" id="apidoc.element.rabbot.ackBatch.prototype.changeName">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>changeName
+        <span class="apidocSignatureSpan">( name )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">changeName = function ( name ) {
+  this.name = name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.failedWith = err;
+    this.transition( &#x22;failed&#x22; );
+  }.bind( this );
+  var onDefined = function( defined ) {
+    if( !this.name ) {
+      this.name = defined.queue;
+      options.name = defined.queue;
+      queue.messages.<span class="apidocCodeKeywordSpan">changeName</span>( this.name );
+      topology.renameQueue( defined.queue );
+    }
+    this.transition( &#x22;ready&#x22; );
+  }.bind( this );
+  queue.define()
+    .then( onDefined, onError );
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.emit" id="apidoc.element.rabbot.ackBatch.prototype.emit">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>emit
+        <span class="apidocSignatureSpan">( topic, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function ( topic, data ) {
+		var envelope = this.getEnvelope( topic, data );
+		this._cache = this._cache || {};
+		var cache = this._cache[ topic ];
+		var invoker = function( subDef ) {
+			subDef.invokeSubscriber( envelope.data, envelope );
+		};
+		if ( !cache ) {
+			cache = this._cache[ topic ] = [];
+			var cacherFn = getCacher( topic, cache, invoker );
+			_.each( this._subscriptions, function( candidates ) {
+				_.each( slice.call( candidates, 0 ), cacherFn );
+			} );
+		} else {
+			_.each( slice.call( cache, 0 ), invoker );
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+AckBatch.prototype._resolveAll = function( status, first, last ) {
+	var count = this.messages.length;
+	var emitEmpty = function() {
+		// process.nextTick( function() {
+    setTimeout( function() {
+			this.<span class="apidocCodeKeywordSpan">emit</span>( &#x22;empty&#x22; );
+		}.bind( this ), 10 );
+	}.bind( this );
+	if ( this.messages.length !== 0 ) {
+		var lastTag = this._lastByStatus( status ).tag;
+		log.debug( &#x22;%s ALL (%d) tags on %s up to %d - %s.&#x22;,
+			status,
+			this.messages.length,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.getEnvelope" id="apidoc.element.rabbot.ackBatch.prototype.getEnvelope">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>getEnvelope
+        <span class="apidocSignatureSpan">( topic, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEnvelope = function ( topic, data ) {
+		return {
+			topic: topic,
+			timeStamp: new Date(),
+			data: data
+		};
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.getMessageOps" id="apidoc.element.rabbot.ackBatch.prototype.getMessageOps">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>getMessageOps
+        <span class="apidocSignatureSpan">( tag )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMessageOps = function ( tag ) {
+	var message = {
+		tag: tag,
+		status: &#x22;pending&#x22;
+	};
+	return {
+		message: message,
+		ack: function() {
+			log.debug( &#x22;Marking tag %d as ack&#x27;d on queue %s - %s&#x22;, tag, this.name, this.connectionName );
+			this.firstAck = this.firstAck || tag;
+			message.status = &#x22;ack&#x22;;
+		}.bind( this ),
+		nack: function() {
+			log.debug( &#x22;Marking tag %d as nack&#x27;d on queue %s - %s&#x22;, tag, this.name, this.connectionName );
+			this.firstNack = this.firstNack || tag;
+			message.status = &#x22;nack&#x22;;
+		}.bind( this ),
+		reject: function() {
+			log.debug( &#x22;Marking tag %d as rejected on queue %s - %s&#x22;, tag, this.name, this.connectionName );
+			this.firstReject = this.firstReject || tag;
+			message.status = &#x22;reject&#x22;;
+		}.bind( this )
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return getUntrackedOps( channel, raw, messages );
+	}
+
+	return getTrackedOps( raw, messages );
+}
+
+function getTrackedOps( raw, messages ) {
+	return messages.<span class="apidocCodeKeywordSpan">getMessageOps</span>( raw.fields.deliveryTag );
+}
+
+function getUntrackedOps( channel, raw, messages ) {
+	messages.receivedCount += 1;
+	return {
+		ack: noOp,
+		nack: function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.ignoreSignal" id="apidoc.element.rabbot.ackBatch.prototype.ignoreSignal">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>ignoreSignal
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ignoreSignal = function () {
+	if ( this.signalSubscription ) {
+		this.signalSubscription.unsubscribe();
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			}
+			return q;
+		} );
+}
+
+function finalize( channel, messages ) {
+	messages.reset();
+	messages.<span class="apidocCodeKeywordSpan">ignoreSignal</span>();
+	channel.release();
+	channel = undefined;
+}
+
+function getContentType( body, options ) {
+	if( options &#x26;&#x26; options.contentType ) {
+		return options.contentType;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.listenForSignal" id="apidoc.element.rabbot.ackBatch.prototype.listenForSignal">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>listenForSignal
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenForSignal = function () {
+	if ( !this.signalSubscription ) {
+		this.signalSubscription = signal.subscribe( &#x22;#&#x22;, function() {
+			this._processBatch();
+		}.bind( this ) );
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function subscribe( channelName, channel, topology, serializers, messages, options, exclusive ) {
+	var shouldAck = !options.noAck;
+	var shouldBatch = !options.noBatch;
+	var shouldCacheKeys = !options.noCacheKeys
+  // this is done to support rabbit-assigned queue names
+  channelName = channelName || options.name
+	if ( shouldAck &#x26;&#x26; shouldBatch ) {
+		messages.<span class="apidocCodeKeywordSpan">listenForSignal</span>();
+	}
+
+	options.consumerTag = info.createTag( channelName );
+	if( _.keys( channel.item.consumers ).length &#x3e; 0 ) {
+		log.info( &#x22;Duplicate subscription to queue %s ignored&#x22;, channelName );
+		return when( options.consumerTag );
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.off" id="apidoc.element.rabbot.ackBatch.prototype.off">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>off
+        <span class="apidocSignatureSpan">( topic, context )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function ( topic, context ) {
+		var self = this;
+		self._subscriptions = self._subscriptions || {};
+		self._cache = self._cache || {};
+		switch ( arguments.length ) {
+			case 0:
+				_.each( self._subscriptions, function( tpc ) {
+					_.each( tpc, function( subDef, idx ) {
+						removeSubscriber( subDef, self, idx, tpc );
+					} );
+				} );
+				self._subscriptions = {};
+				break;
+			case 1:
+				var type = Object.prototype.toString.call( topic ) === &#x22;[object String]&#x22; ? &#x22;topic&#x22; : topic instanceof SubscriptionDefinition
+ ? &#x22;def&#x22; : &#x22;context&#x22;;
+				switch ( type ) {
+					case &#x22;topic&#x22;:
+						if ( self._subscriptions[ topic ] ) {
+							_.each( self._subscriptions[ topic ], function( subDef, idx ) {
+								removeSubscriber( subDef, self, idx, self._subscriptions[ topic ] );
+							} );
+						}
+						break;
+					case &#x22;context&#x22;:
+						_.each( self._subscriptions, function( subs ) {
+							_.each( _.clone( subs ), function( subDef, idx ) {
+								if ( subDef._context === topic ) {
+									removeSubscriber( subDef, self, idx, subs );
+								}
+							} );
+						} );
+						break;
+					default:
+						// topic arg is the subDef in this case....
+						_.each( self._subscriptions[ topic.topic ], function( subDef, idx ) {
+							if ( subDef === topic ) {
+								removeSubscriber( subDef, self, idx, self._subscriptions[ topic.topic ] );
+							}
+						} );
+						break;
+				}
+				break;
+			default:
+				_.each( _.clone( self._subscriptions[ topic ] ), function( subDef, idx ) {
+					if ( subDef._context === context ) {
+						removeSubscriber( subDef, self, idx, self._subscriptions[ topic ] );
+					}
+				} );
+				break;
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.on" id="apidoc.element.rabbot.ackBatch.prototype.on">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>on
+        <span class="apidocSignatureSpan">( topic, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function ( topic, callback ) {
+		var self = this;
+		self._subscriptions = self._subscriptions || {};
+		self._subscriptions[ topic ] = self._subscriptions[ topic ] || [];
+		var subDef = new SubscriptionDefinition( topic, callback, self );
+		self._subscriptions[ topic ].push( subDef );
+
+		// Next, add the SubscriptionDefinition to any relevant existing cache(s)
+		_.each( self._cache, function( list, key ) {
+			getCacher( key, list )( subDef );
+		} );
+
+		return self._subscriptions[ topic ][ self._subscriptions[ topic ].length - 1 ];
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### retry()
+After an `unhandled` event is raised by rabbot, not further attempts to connect will be made unless `retry` is called.
+
+```js
+// How to create a zombie
+var rabbit = require( &#x22;rabbot&#x22; );
+
+rabbit.<span class="apidocCodeKeywordSpan">on</span>( &#x22;unreachable&#x22;, function() {
+  rabbit.retry();
+} );
+
+```
+
+### shutdown()
+Once a connection is established, rabbot will keep the process running unless you call `shutdown`. This is because most services
+ shouldn&#x27;t automatically shutdown at the first accidental disconnection`. Shutdown attempts to provide the same guarantees
+as close - only allowing the process to exit after publishing and resolving received messages.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.once" id="apidoc.element.rabbot.ackBatch.prototype.once">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>once
+        <span class="apidocSignatureSpan">( topic, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function ( topic, callback ) {
+		return this.on( topic, callback ).once();
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			log.error( &#x22;Failed to create channel &#x27;%s&#x27; on &#x27;%s&#x27; for &#x27;%s&#x27; with %s&#x22;, name, this.name,
+error );
+			return when.reject( error );
+		},
+
+		_reconnect: function() {
+			var reacquisitions = _.map( channels, function( channel ) {
+				return when.promise( function( resolve ) {
+					channel.<span class="apidocCodeKeywordSpan">once</span>( &#x22;acquired&#x22;, function() {
+						resolve( channel );
+					} );
+					channel.acquire();
+				}.bind( this ) );
+			}.bind( this ) );
+
+			function reacquired() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.ackBatch.prototype.reset" id="apidoc.element.rabbot.ackBatch.prototype.reset">
+        function <span class="apidocSignatureSpan">rabbot.ackBatch.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+	this.lastAck = -1;
+	this.lastNack = -1;
+	this.lastReject = -1;
+	this.firstAck = undefined;
+	this.firstNack = undefined;
+	this.firstReject = undefined;
+	this.messages = [];
+	this.receivedCount = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	reject: &#x22;_reject&#x22;
+};
+
+var AckBatch = function( name, connectionName, resolver ) {
+	this.name = name;
+	this.connectionName = connectionName;
+	this.resolver = resolver;
+	this.<span class="apidocCodeKeywordSpan">reset</span>();
+};
+
+AckBatch.prototype._ack = function( tag, inclusive ) {
+	this.lastAck = tag;
+	this._resolveTag( tag, &#x22;ack&#x22;, inclusive );
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbot.channel" id="apidoc.module.rabbot.channel">module rabbot.channel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.channel.create" id="apidoc.element.rabbot.channel.create">
+        function <span class="apidocSignatureSpan">rabbot.channel.</span>create
+        <span class="apidocSignatureSpan">( connection, name, confirm )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function ( connection, name, confirm ) {
+		var method = confirm ? &#x22;createConfirmChannel&#x22; : &#x22;createChannel&#x22;;
+		var factory = function() {
+			return connection[ method ]();
+		};
+		var channel = monad( name, &#x22;channel&#x22;, factory, AmqpChannel, close.bind( null, name ) );
+		return channel;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			connection.close();
+		},
+
+		_getChannel: function ( name, confirm, context ) {
+      var channel = channels[ name ];
+			if ( !channel ) {
+				return when.promise( function( resolve ) {
+					channel = channelFn.<span class="apidocCodeKeywordSpan">create</span>( connection, name, confirm );
+					channels[ name ] = channel;
+					channel.on( &#x22;acquired&#x22;, function() {
+						this._onChannel.bind( this, name, context );
+						resolve( channel );
+					}.bind( this ) );
+					channel.on( &#x22;return&#x22;, function(raw) {
+						this.emit( &#x22;return&#x22;, raw);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbot.info" id="apidoc.module.rabbot.info">module rabbot.info</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.info.createConsistentHash" id="apidoc.element.rabbot.info.createConsistentHash">
+        function <span class="apidocSignatureSpan">rabbot.info.</span>createConsistentHash
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createConsistentHash() {
+	return hash( consistentId );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Topology.prototype.getUniqueName = function( options ) {
+	if( options.unique === &#x22;id&#x22; ) {
+		return [ info.id, options.name ].join( &#x22;-&#x22; );
+	} else if( options.unique === &#x22;hash&#x22; ) {
+		return [ options.name, info.createHash() ].join( &#x22;-&#x22; );
+	} else if( options.unique === &#x22;consistent&#x22; ) {
+		return [ options.name, info.<span class="apidocCodeKeywordSpan">createConsistentHash</span>() ].join( &#x22;-&#x22; );
+	} else {
+		return options.name;
+	}
+};
+
+Topology.prototype.onReconnect = function() {
+	log.info( &#x22;Reconnection to &#x27;%s&#x27; established - rebuilding topology&#x22;, this.connection.name );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.info.createHash" id="apidoc.element.rabbot.info.createHash">
+        function <span class="apidocSignatureSpan">rabbot.info.</span>createHash
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createConsumerHash() {
+	return hash( consumerId );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return queueName;
+	} else {
+		return format( &#x22;%s.%s&#x22;, consumerId, queueName );
+	}
+}
+
+function hash( id ) {
+	var bytes = crypto.<span class="apidocCodeKeywordSpan">createHash</span>( &#x22;md4&#x22; ).update( id ).digest();
+	var num = toBE ? bytes.readdInt16BE() : bytes.readInt16LE();
+	return num &#x3c; 0 ? Math.abs( num ) + 0xffffffff : num;
+}
+
+// not great, but good enough for our purposes
+function createConsumerHash() {
+	return hash( consumerId );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.info.createTag" id="apidoc.element.rabbot.info.createTag">
+        function <span class="apidocSignatureSpan">rabbot.info.</span>createTag
+        <span class="apidocSignatureSpan">( queueName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createConsumerTag( queueName ) {
+	if( queueName.indexOf( consumerId ) === 0 ) {
+		return queueName;
+	} else {
+		return format( &#x22;%s.%s&#x22;, consumerId, queueName );
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var shouldCacheKeys = !options.noCacheKeys
+  // this is done to support rabbit-assigned queue names
+  channelName = channelName || options.name
+	if ( shouldAck &#x26;&#x26; shouldBatch ) {
+		messages.listenForSignal();
+	}
+
+	options.consumerTag = info.<span class="apidocCodeKeywordSpan">createTag</span>( channelName );
+	if( _.keys( channel.item.consumers ).length &#x3e; 0 ) {
+		log.info( &#x22;Duplicate subscription to queue %s ignored&#x22;, channelName );
+		return when( options.consumerTag );
+	}
+	log.info( &#x22;Starting subscription to queue &#x27;%s&#x27; on &#x27;%s&#x27;&#x22;, channelName, topology.connection.name );
+  return channel.consume( channelName, function( raw ) {
+		if( !raw ) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.info.host" id="apidoc.element.rabbot.info.host">
+        function <span class="apidocSignatureSpan">rabbot.info.</span>host
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHostInfo() {
+	return format( &#x22;%s (%s %s)&#x22;, host, platform, architecture );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			return fs.existsSync(caPath)? fs.readFileSync( caPath ) : caPath;
+		} );
+	}
+	if ( useSSL ) {
+		this.protocol = &#x27;amqps://&#x27;;
+	}
+	this.options.clientProperties = {
+		host: info.<span class="apidocCodeKeywordSpan">host</span>(),
+		process: info.process(),
+		lib: info.lib()
+	};
+	this.limit = _.max( [ this.servers.length, this.ports.length ] );
+};
+
+Adapter.prototype.connect = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.info.lib" id="apidoc.element.rabbot.info.lib">
+        function <span class="apidocSignatureSpan">rabbot.info.</span>lib
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLibInfo() {
+	return format( &#x22;rabbot - %s&#x22;, self.version );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	}
+	if ( useSSL ) {
+		this.protocol = &#x27;amqps://&#x27;;
+	}
+	this.options.clientProperties = {
+		host: info.host(),
+		process: info.process(),
+		lib: info.<span class="apidocCodeKeywordSpan">lib</span>()
+	};
+	this.limit = _.max( [ this.servers.length, this.ports.length ] );
+};
+
+Adapter.prototype.connect = function() {
+	return when.promise( function( resolve, reject ) {
+		var attempted = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbot.info.process" id="apidoc.element.rabbot.info.process">
+        function <span class="apidocSignatureSpan">rabbot.info.</span>process
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getProcessInfo() {
+	return format( &#x22;%s (pid: %d)&#x22;, title, pid );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		} );
+	}
+	if ( useSSL ) {
+		this.protocol = &#x27;amqps://&#x27;;
+	}
+	this.options.clientProperties = {
+		host: info.host(),
+		process: info.<span class="apidocCodeKeywordSpan">process</span>(),
+		lib: info.lib()
+	};
+	this.limit = _.max( [ this.servers.length, this.ports.length ] );
+};
+
+Adapter.prototype.connect = function() {
+	return when.promise( function( resolve, reject ) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
